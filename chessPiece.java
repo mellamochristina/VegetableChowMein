@@ -4,7 +4,6 @@ public class chessPiece {
 	int col;
 	int row;
 	boolean color;
-	boolean isAttacking;
 	boolean isAttacking (chessPiece c) {
  	//check if c is at (col,row)
  	}
