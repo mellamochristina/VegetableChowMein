@@ -5,6 +5,9 @@ public class chessPiece {
 	int row;
 	boolean color;
 	boolean isAttacking;
+	boolean isAttacking (chessPiece c) {
+ 	//check if c is at (col,row)
+ 	}
 	
 	class King extends chessPiece {
 		boolean isAttacking (chessPiece c) {
