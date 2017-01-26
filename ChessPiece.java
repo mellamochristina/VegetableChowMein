@@ -1,10 +1,10 @@
-package chessPiece;
+import java.util.*;
 
 
-public class chessPiece {
+public class ChessPiece {
 	int col;
 	int row;
-	boolean isAttacking (chessPiece c) {
+	boolean isAttacking (ChessPiece c) {
  	//check if c is at (col,row)
  	}
 	//prints all values stored in linked list...pseudocode
