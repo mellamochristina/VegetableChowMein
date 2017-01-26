@@ -29,6 +29,8 @@ Just to clarify, there will be no separate input text files for each board.
         /*
          * add chess pieces to board
          * 
+         *
+         * ChessPiece[] pieces = {new King(), new Queen(), new Rook(), new Knight(), new Bishop()}; 
          * */
         
         /*
