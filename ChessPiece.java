@@ -1,4 +1,10 @@
 import java.util.*;
+/*
+Color matters for two parts of the problem: 
+-When determining if the chess board is valid, there can only be one black queen and one white queen.
+
+-When programming the pawns for extra credit, white and black pawns behave differently.
+*/
 
 
 public class ChessPiece {
@@ -15,6 +21,14 @@ public class ChessPiece {
 			current = current.next;
 		}
 	}
+	//method that checks if a piece attacks another piece
+	public void checkIfAttack(){
+		for(int i = 0; i<something; i++){
+			traverse;
+			for(int j = 0; j<something; j++){
+				traverse;
+				piece1.canAttack(piece2);
+			}
 	//returns true if query is found in the list and returns false otherwise
 	boolean find(){
 		//traverse
