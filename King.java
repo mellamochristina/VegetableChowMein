@@ -1,5 +1,5 @@
 import java.util.*;
 
-class King extends chessPiece{
+class King extends ChessPiece{
 
 }
