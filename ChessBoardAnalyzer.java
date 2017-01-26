@@ -19,6 +19,8 @@ Just to clarify, there will be no separate input text files for each board.
       String[] token = line.split("\n");
       int newLine++;
       while(in.hasNextLine()&&newLine<2){
+        firstLine = in.nextLine();
+        secondLine = in.nextLine();
         /*
          * read in characters and col/row for pieces
          * 
