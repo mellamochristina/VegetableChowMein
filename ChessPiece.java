@@ -26,4 +26,5 @@ public class ChessPiece {
 		latest.next = head;
 		head = latest;
 	}
+	
 }
