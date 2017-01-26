@@ -1,5 +1,5 @@
 import java.util.*;
-
+// class that is going to be storing the linked list of ChessPiece objects
 public class ChessBoard {
   static final Scanner in = new Scanner(new file("input.txt"));
   public static void main(String[] args) {
