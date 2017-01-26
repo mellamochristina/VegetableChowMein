@@ -1,4 +1,13 @@
 public class ChessBoardAnalyzer{
+  /*
+  The input.txt must contain several chessboards and queries as given in Examples.zip. 
+  Your program should read 2 lines at a time, construct a chessboard, output the 
+  solution (for the current chessboard considered) in analysis.txt. Then read the next chessboard and 
+  query from the same input.txt file, append the output to analysis.txt. The process continues 
+  until you have exhausted all the chessboards in input.txt.
+ 
+Just to clarify, there will be no separate input text files for each board.
+*/
   public static void main(String[] args) throws IOException{
     //open files
     Scanner in = new Scanner(new File("input.txt"));
