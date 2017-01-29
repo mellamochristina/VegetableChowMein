@@ -1,4 +1,3 @@
-
 public class ChessPiece {
 	char piece;
 	int col;
