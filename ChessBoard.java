@@ -15,12 +15,29 @@ public class ChessBoard {
 	
 	//Makes sure that no pieces are placed in the same square 
 	boolean validatePieces () {
+		for (int i = 0; i < pieces.size(); i++) {
+			ChessPiece currentPiece = pieces.get(i);
+			for (int j = 0; j < pieces.size(); j++) {
+				//Makes sure that you aren't comparing the same pieces 
+				if (j != i) {
+					ChessPiece nextPiece = pieces.get(j);
+					if (currentPiece.col == nextPiece.col && currentPiece.row == nextPiece.row) {
+						return false;
+					}
+				}
+			}
+		}
 		return true;
 	}
 	
 	//Returns a string of the type of chess piece from coordinates of 2nd line of input
 	//Returns "-" if no piece is found at query square
 	String querySquare(int col, int row) {
+		for (ChessPiece piece : pieces) {
+			if (piece.col == col && piece.row == row) {
+				return Character.toString(piece.piece);
+			}
+		}
 		return "-";
 	}
 	
