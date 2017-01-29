@@ -1,49 +1,69 @@
-package chessPiece;
 
-public class chessPiece {
+public class ChessPiece {
+	char piece;
 	int col;
 	int row;
-	char color; 
-	boolean isAttacking (chessPiece c) {
-		//check to make sure that two pieces are not in the same square
-		if (c.col == col || c.row == row) {
-			return false;
-		}
-		return true;
+	
+	ChessPiece (char piece, int col, int row) {
+		this.piece = piece;
+		this.col = col;
+		this.row = row;
+		
 	}
-	boolean verifySolution (chessPiece [] pieces) {
-		for (int i = 0; i < pieces.length; i++) {
-			for (int j = 0; j < pieces.length; j++) {
-				if (pieces[i].isAttacking(pieces[j])) {
-					return false;
-				}
-				return true;
-			}
-		}
+	
+
+	boolean isAttacking (ChessPiece c) {
+		return false;
 	}
 }
-class King extends chessPiece {
-	boolean isAttacking (chessPiece c) {
+
+class King extends ChessPiece {
+	King (char piece, int col, int row) {
+		super(piece, col, row);
+	}
+
+	boolean isAttacking (ChessPiece c) {
 		//king can attack 1 square in any direction
+		return false;
 	}
 }
-class Queen extends chessPiece {
-	boolean isAttacking (chessPiece c) {
+
+class Queen extends ChessPiece {
+	Queen (char piece, int col, int row) {
+		super(piece, col, row);
+	}
+	boolean isAttacking (ChessPiece c) {
 		//queen can attack up,down,left,right,and diagonal
+		return false;
 	}
 }
-class Rook extends chessPiece {
-	boolean isAttacking (chessPiece c) {
+
+class Rook extends ChessPiece {
+	Rook (char piece, int col, int row) {
+		super(piece, col, row);
+	}
+	boolean isAttacking (ChessPiece c) {
 		//rook can attack up,down,left, and right
+		return false;
 	}
 }
-class Bishop extends chessPiece {
-	boolean isAttacking (chessPiece c) {
+
+class Bishop extends ChessPiece {
+	Bishop (char piece, int col, int row) {
+		super(piece, col, row);
+	}
+	boolean isAttacking (ChessPiece c) {
 		//bishop can attack diagonally
+		return false;
 	}
 }
-class Knight extends chessPiece {
-	boolean isAttacking (chessPiece c) {
+
+class Knight extends ChessPiece {
+	Knight (char piece, int col, int row) {
+		super(piece, col, row);
+	}
+	boolean isAttacking (ChessPiece c) {
 		//knight can attack L-shape
+		return false;
 	}
 }
