@@ -30,6 +30,32 @@ public class ChessBoard {
 		return true;
 	}
 	
+	boolean validateKings (String piecesLine) {
+		// if there is not exactly one black and one white king, return false
+		String [] line1Tokens = piecesLine.split("\\s+");
+		boolean whiteKing = false;
+		int white = 0;
+		boolean blackKing = false;
+		int black = 0;
+		for (int i = 1; i < line1Tokens.length; i = i + 3 ) {
+			if (line1Tokens[i].charAt(0) == 'k') {
+				whiteKing = true;
+				white++;
+			}
+			if (line1Tokens[i].charAt(0) == 'K') {
+				blackKing = true;
+				black++;
+			}
+		}
+		if (whiteKing && blackKing) {
+			if (white == 1 && black == 1) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
 	//Returns a string of the type of chess piece from coordinates of 2nd line of input
 	//Returns "-" if no piece is found at query square
 	String querySquare(int col, int row) {
