@@ -82,7 +82,9 @@ public class ChessBoardAnalyzer {
 		else if (lowerPiece == 'n') {
 			piece = new Knight (type, col, row);
 		}
+		
 		return piece;
 	}
 
 }
+
