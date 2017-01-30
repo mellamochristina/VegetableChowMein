@@ -23,9 +23,6 @@ class King extends ChessPiece {
 
 	boolean isAttacking (ChessPiece c) {
 		//king can attack 1 square in any direction
-		/*
-		check to see if this attack function is correct
-		*/
 		if(Math.abs(row-c.row)>1||Math.abs(col-c.col)>1) //if piece and c are more than one space apart, pieces aren't attacking
 			return false;
 		//else{
@@ -95,7 +92,17 @@ class Knight extends ChessPiece {
 		super(piece, col, row);
 	}
 	boolean isAttacking (ChessPiece c) {
+		double dubCol = (col-c.col);
+		double dubRow = (row-c.row);
 		//knight can attack L-shape
+		try{
+		if(Math.abs(dubCol/dubRow)==0.5||Math.abs(dubCol/dubRow)==2.0)
+			return true;
+		else
 		return false;
+		}
+		catch(ArithmeticException e){ //if it divides by 0, java throws an ArithmeticException and this catches it
+			return false;
+		}
 	}
 }
