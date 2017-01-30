@@ -25,7 +25,7 @@ public class ChessBoardAnalyzer {
 			String line1 = in.nextLine();
 			String line2 = in.nextLine();
 			ChessBoard board = createNewBoard(line1);
-			String results = analyzeBoard(board, line1, line2);
+			String results = analyzeBoard(board, line2);
 			out.println(results);
 		}
 	    in.close();
@@ -51,8 +51,8 @@ public class ChessBoardAnalyzer {
 	
 	//If chess board is valid, return string of piece at query square and attacking pieces with their location 
 	//If chess board is invalid, return string "Invalid"
-	static String analyzeBoard (ChessBoard board, String piecesLine, String queryLine) {
-		if (board.validatePieces() && board.validateKings(piecesLine)) {
+	static String analyzeBoard (ChessBoard board, String queryLine) {
+		if (board.validatePieces() && board.validateKings()) {
 			String [] line2Tokens = queryLine.split("\\s+");
 			int col = Integer.parseInt(line2Tokens[0]);
 			int row = Integer.parseInt(line2Tokens[1]);
