@@ -23,6 +23,15 @@ class King extends ChessPiece {
 
 	boolean isAttacking (ChessPiece c) {
 		//king can attack 1 square in any direction
+		/*
+		check to see if this attack function is correct
+		*/
+		
+		if (row==c.row++||col==c.col++)
+			return true;
+		else if (Math.abs(row-c.row-1)==Math.abs(col-c.col-1))
+			return true;
+		else
 		return false;
 	}
 }
