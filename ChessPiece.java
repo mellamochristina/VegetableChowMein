@@ -26,13 +26,24 @@ class King extends ChessPiece {
 		/*
 		check to see if this attack function is correct
 		*/
-		
-		if (row==c.row++||col==c.col++)
-			return true;
-		else if (Math.abs(row-c.row-1)==Math.abs(col-c.col-1))
-			return true;
+		if(Math.abs(row-c.row)>1||Math.abs(col-c.col)>1) //if piece and c are more than one space apart, pieces aren't attacking
+			return false;
+		//else{
+		//int resultOne = 0;
+		//int resultTwo = 0;
+		//try{//these equations sometimes divides by 0, which throws an ArithmeticException
+			//resultOne = Math.abs((row-c.row)/(col-c.col)); 
+			//resultTwo = Math.abs((col-c.col)/(row-c.row));
+		//}
+		//catch(ArithmeticException e){ //if it divides by 0, java throws an ArithmeticException and this catches it
+			//resultOne = 1; //forces the error to set result to 1
+			//resultTwo = 1;
+		//}
+		//if (resultOne==1||resultTwo==1)
+		   // return true;
 		else
-		return false;
+		    return true; //if piece and c are a space or less apart, pieces are attacking
+		//}
 	}
 }
 
