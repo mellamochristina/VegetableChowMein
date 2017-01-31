@@ -1,5 +1,6 @@
 package chessPiece;
 
+//coded with help from https://github.com/vigilkj/LinkedList
 public class LinkedList{
 	  Node head;
 	  int size; //used for the obtaining size of the linked list
