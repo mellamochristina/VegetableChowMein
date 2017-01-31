@@ -1,10 +1,11 @@
 package chessPiece;
 public class ChessPiece {
+	//need the type of piece, its column, and row
 	char piece;
 	int col;
 	int row;
 	
-	ChessPiece (char piece, int col, int row) {
+	ChessPiece (char piece, int col, int row) { //constructor for the chess piece
 		this.piece = piece;
 		this.col = col;
 		this.row = row;
@@ -12,7 +13,7 @@ public class ChessPiece {
 	}
 	
 
-	boolean isAttacking (ChessPiece c) {
+	boolean isAttacking (ChessPiece c) { //constructor is initially set to return false. only returns true when proven through conditions
 		return false;
 	}
 }
@@ -28,7 +29,7 @@ class King extends ChessPiece {
 			return false;
 		else
 		    return true; //if piece and c are a space or less apart, pieces are attacking
-		//}
+		
 	}
 }
 
@@ -79,8 +80,9 @@ class Knight extends ChessPiece {
 	  Knight (char piece, int col, int row) {
 	    super(piece, col, row);
 	  }
-	  boolean isAttacking (ChessPiece c) {
-	    if (((Math.abs(col-c.col))==2) && (Math.abs(row-c.row))==1){
+	//knight can attack in L-shape
+	  boolean isAttacking (ChessPiece c) { 
+	    if (((Math.abs(col-c.col))==2) && (Math.abs(row-c.row))==1){ //algorithm with help from Ran Tao on Piazza
 	      return true;
 	    }
 	    else
