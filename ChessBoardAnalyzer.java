@@ -1,9 +1,5 @@
-package chessPiece;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class ChessBoardAnalyzer {
 	/*
@@ -20,6 +16,7 @@ public class ChessBoardAnalyzer {
 	public static void main(String[] args) throws IOException{
 		//open files
 		Scanner in = new Scanner(new File("input.txt"));
+		//prints solution to analysis.txt
 		PrintWriter out = new PrintWriter(new FileWriter("analysis.txt"));
 		//read lines from input.txt
 		while (in.hasNextLine()){
@@ -35,13 +32,18 @@ public class ChessBoardAnalyzer {
 	
 	//Create new board and add pieces from input line to the board 
 	static ChessBoard createNewBoard(String boardLine) {
+		//removes spaces in the line and stores each element as a string in an array
 		String [] line1Tokens = boardLine.split("\\s+");
 		
+		//converts first element from string array into an integer
 		int boardSize = Integer.parseInt(line1Tokens[0]);
 		ChessBoard board = new ChessBoard(boardSize);
 		
+		//after the first element, reads in every three elements as one chess piece
 		for (int i = 1; i < line1Tokens.length; i = i + 3 ) {
+			//converts from string to character for chess piece type
 			char pieceType = line1Tokens[i].charAt(0);
+			//converts from string to integers for col and row
 			int col = Integer.parseInt(line1Tokens[i+1]);
 			int row = Integer.parseInt(line1Tokens[i+2]);
 			ChessPiece piece = createChessPiece(pieceType, col, row);
@@ -50,7 +52,7 @@ public class ChessBoardAnalyzer {
 		return board;
 	}
 	
-	//If chess board is valid, return string of piece at query square and attacking pieces with their location 
+	//If chess board is valid, return string of chess piece type at query square and attacking pieces with their location 
 	//If chess board is invalid, return string "Invalid"
 	static String analyzeBoard (ChessBoard board, String queryLine) {
 		if (board.validatePieces() && board.validateKings()) {
@@ -64,6 +66,7 @@ public class ChessBoardAnalyzer {
 		return "Invalid";
 	}
 	
+	//ignores case to determine what type of chess piece to create 
 	static ChessPiece createChessPiece(char type, int col, int row) {
 		char lowerPiece = Character.toLowerCase(type);
 		ChessPiece piece = null;
