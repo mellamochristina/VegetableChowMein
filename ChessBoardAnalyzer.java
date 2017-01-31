@@ -1,3 +1,10 @@
+/*
+CMPS 12B Winter 2017
+HW2
+Coded by Vanessa Tan and Christina Vo with help from instructors and classmates on Piazza. 
+Outside sources are commented in the code.
+*/
+
 import java.io.*;
 import java.util.*;
 
