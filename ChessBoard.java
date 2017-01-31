@@ -1,20 +1,19 @@
-package chessPiece;
-
 public class ChessBoard {
-	int boardSize;
+	int boardSize; 
 	LinkedList pieces = new LinkedList();
-	
+	 
 	ChessBoard (int boardSize){
 		this.boardSize = boardSize;
 	}
 	
-	//Add chess piece to linked list
+	//Adds chess piece to linked list
 	void addPiece(ChessPiece piece) {
 		pieces.add(piece);
 	}
 	
 	//Makes sure that no pieces are placed in the same square 
 	boolean validatePieces () {
+		//Loops through and compares every single piece with each other
 		for (int i = 0; i < pieces.size(); i++) {
 			ChessPiece currentPiece = pieces.get(i);
 			for (int j = 0; j < pieces.size(); j++) {
@@ -31,9 +30,11 @@ public class ChessBoard {
 	}
 	// if there is not exactly one black and one white king, return false
 	boolean validateKings () {
+		//checks to see if a king of each type is found
 		boolean whiteKing = false;
-		int white = 0;
 		boolean blackKing = false;
+		//keeps count of how many kings of each type are found
+		int white = 0;
 		int black = 0;
 		for (int i = 0; i < pieces.size(); i ++ ) {
 			ChessPiece c = pieces.get(i);
@@ -47,6 +48,7 @@ public class ChessBoard {
 			}
 		}
 		if (whiteKing && blackKing) {
+			//makes sure there is exactly ONE of each type of king
 			if (white == 1 && black == 1) {
 				return true;
 			}
@@ -55,14 +57,9 @@ public class ChessBoard {
 	}
 
 	
-	//Returns a string of the type of chess piece from coordinates of 2nd line of input
+	//Returns a string of the type of chess piece located at query square
 	//Returns "-" if no piece is found at query square
 	String querySquare(int col, int row) {
-//		for (ChessPiece piece : pieces) {
-//			if (piece.col == col && piece.row == row) {
-//				return Character.toString(piece.piece);
-//			}
-//		}
 	    for (int i = 0; i < pieces.size(); i++) {
 	        ChessPiece piece = pieces.get(i);
 	        if (piece.col == col && piece.row == row) {
@@ -74,6 +71,7 @@ public class ChessBoard {
 	
 	//Returns string of attacking pieces' type, col, row to analysis.txt
 	String determineAttackPieces() {
+		//Loops through and compares every single piece with each other to check if they are attacking each other
 		for (int i = 0; i < pieces.size(); i++) {
 			ChessPiece currentPiece = pieces.get(i);
 			for (int j = 0; j < pieces.size(); j++) {
